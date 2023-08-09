@@ -102,7 +102,7 @@ class MyAppState extends State<MyApp> {
               )
             : html.replaceFirst(
                 'CALLBACK_URL_HERE',
-                'foobar://success?code=1337',
+                'https://example.windows.com/?code=1337',
               ),
       );
 
@@ -122,7 +122,7 @@ class MyAppState extends State<MyApp> {
     final callbackUrlScheme =
         !kIsWeb && (Platform.isWindows || Platform.isLinux)
             ? 'http://localhost:43824'
-            : 'foobar';
+            : 'https';
 
     try {
       final result = await FlutterWebAuth2.authenticate(
